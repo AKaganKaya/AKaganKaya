@@ -62,14 +62,18 @@
      - küçülür, taşmaz
      - yükseklik ekranın %70'ini geçmesin (özellikle mobil)
   */
-  .hero-img{
-    display:block;
+  .hero-img {
+    display: block;
     width: 100%;
     height: auto;
-    max-height: 70dvh;
-    object-fit: contain;        /* hiçbir şeyi kesmeden göster */
-    border-radius: calc(var(--radius) - 6px);
+    max-width: 600px;       /* masaüstünde çok büyümesin */
+    max-height: 50vh;       /* mobilde ekran yüksekliğinin en fazla yarısı */
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   }
+  
   
   /* İsteğe bağlı altyazı */
   .caption{
