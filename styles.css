@@ -1,85 +1,54 @@
-/* Temel görünüm */
-:root{
-    --bg: #f6f7f9;
-    --fg: #111;
-    --muted: #666;
-    --card: #fff;
-    --shadow: 0 8px 30px rgba(0,0,0,.08);
-    --radius: 18px;
-  }
-  
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg: #0f1115;
-      --fg: #f2f3f5;
-      --muted: #a6adbb;
-      --card: #161a22;
-      --shadow: 0 8px 30px rgba(0,0,0,.35);
-    }
-  }
-  
-  *{ box-sizing:border-box; }
-  html,body{ height:100%; }
-  body{
-    margin:0;
-    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--fg);
-  }
-  
-  /* Sayfa sarmalayıcı */
-  .wrap{
-    min-height:100dvh;
-    display:grid;
-    place-items:center;
-    padding: clamp(16px, 3vw, 40px);
+/* Genel stil */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   /* Başlık */
-  .header{
-    text-align:center;
-    margin-bottom: clamp(16px, 3vw, 28px);
-  }
-  .header h1{
-    margin:0;
-    font-weight: 700;
-    font-size: clamp(20px, 2.8vw, 34px);
-    letter-spacing: .2px;
-  }
-  
-  /* Kart + fotoğraf */
-  .card{
-    margin:0;
-    width: min(92vw, 900px);   /* masaüstünde en fazla 900px, mobilde ekrana göre */
-    background: var(--card);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: clamp(10px, 2vw, 14px);
-  }
-  
-  /* Görsel kuralları:
-     - en-boy oranını koru
-     - küçülür, taşmaz
-     - yükseklik ekranın %70'ini geçmesin (özellikle mobil)
-  */
-  .hero-img {
-    display: block;
+  header {
+    text-align: center;
+    padding: 20px 10px;
+    background: #fff;
     width: 100%;
-    height: auto;
-    max-width: 600px;       /* masaüstünde çok büyümesin */
-    max-height: 50vh;       /* mobilde ekran yüksekliğinin en fazla yarısı */
-    margin: 0 auto;
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
   
+  header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
   
-  /* İsteğe bağlı altyazı */
-  .caption{
-    margin-top: .6rem;
-    text-align:center;
-    color: var(--muted);
-    font-size: .95rem;
+  /* Galeri alanı */
+  .gallery {
+    margin: 20px;
+    width: 100%;
+    max-width: 800px; /* masaüstünde 800px'i geçmez */
+    display: grid;
+    gap: 16px;
+  }
+  
+  /* Fotoğraf kartı */
+  .photo-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Fotoğraf */
+  .photo-card img {
+    max-width: 100%;
+    height: auto;
+    max-height: 70vh;   /* mobilde ekranın %70'inden fazla yer kaplamaz */
+    border-radius: 8px;
+    object-fit: contain;
   }
   
