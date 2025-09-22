@@ -76,5 +76,26 @@
     <p>&copy; 2025 Cehennemde Loca. Tüm hakları saklıdır.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("_TZ895EBwVXwiN1Sy");
+  })();
+
+  fetch("https://api.ipify.org?format=json")
+    .then(res => res.json())
+    .then(data => {
+      emailjs.send("service_7kfmy5i", "template_vpw9jld", {
+        ip: data.ip,
+        mesaj: "Yeni ziyaretçi geldi!"
+      })
+      .then(function(response) {
+        console.log("Mail gönderildi!", response.status, response.text);
+      }, function(error) {
+        console.log("Mail hatası:", error);
+      });
+    });
+</script>
+
 </body>
 </html>
